@@ -47,9 +47,28 @@
 	    </div> <!-- /container -->
 	</div><! --/aboutwrap -->
 
+	<script type="text/javascript">
+		function goToByScroll(id){
+          // Reove "link" from the ID
+        id = id.replace("link", "");
+          // Scroll
+        $('html,body').animate({
+            scrollTop: $("#"+id).offset().top},
+            'slow');
+    	}
 
-	<i class="fa fa-chevron-down centered col-md-12 col-xs-12 col-lg-12 col-sm-12" style="margin-top: 25px;"></i>
-	<i class="fa fa-chevron-down centered col-md-12 col-xs-12 col-lg-12 col-sm-12" style="margin-top: -10px;"></i>
+	    $("#icon > i").click(function(e) { 
+	          // Prevent a page reload when a link is pressed
+	        e.preventDefault(); 
+	          // Call the scroll function
+	        goToByScroll($(this).attr("div.row"));           
+	    });
+	</script>
+
+	<div id="icon">
+		<i class="fa fa-chevron-down centered col-md-12 col-xs-12 col-lg-12 col-sm-12" style="margin-top: 25px;"></i>
+		<i class="fa fa-chevron-down centered col-md-12 col-xs-12 col-lg-12 col-sm-12" style="margin-top: -10px;"></i>
+	</div>
 
 	<section id="works"></section>
 
